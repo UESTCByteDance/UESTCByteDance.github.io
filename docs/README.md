@@ -21,7 +21,7 @@
 
 # 三、项目实现
 
-### 3.1 技术选型与相关开发文档
+## 3.1 技术选型与相关开发文档
 
 > 问题和目标： 构建一个稳定、高效的视频分享平台，用户可以上传、观看、点赞视频内容，与好友聊天等，同时确保系统具备一定的扩展性和容错性。
 >
@@ -40,9 +40,9 @@
 >
 > 为了确保视频分享平台的稳定运行和用户满意度，还需要考虑其他方面的因素，如网络带宽、系统监控和故障处理等。综合考虑这些因素，可以建立一个高可用高性能的分布式服务，提供良好的用户体验。
 
-### 3.2 架构设计
+## 3.2 架构设计
 
-#### 3.2.1 服务模块划分
+### 3.2.1 服务模块划分
 
 - Gin实现API网关，完成HTTP请求的转发。
 - Go-micro实现微服务，处理具体的业务逻辑。
@@ -56,11 +56,11 @@
 | RelationService | 社交接口 | 关注、取消关注、获取关注列表、获取粉丝列表、获取好友列表 |
 | MessageService  | 社交接口 | 发送聊天消息，获取消息列表                               |
 
-#### 3.2.2 架构设计图
+### 3.2.2 架构设计图
 
 ![img](.vuepress\public\images\1693747834226-16.png)
 
-#### 3.2.3 关系数据库设计
+### 3.2.3 关系数据库设计
 
 - user表
 
@@ -123,7 +123,7 @@
 | content      | string(1024) | 无         | 无          | 消息内容     |
 | created_at   | time.Time    | 无         | 无          | 创建时间戳   |
 
-#### 3.2.4 Redis缓存设计
+### 3.2.4 Redis缓存设计
 
 | Redis数据库 | 键                            | 值                   | 描述       |
 | ----------- | ----------------------------- | -------------------- | ---------- |
@@ -131,7 +131,7 @@
 | 1           | video_id                      | videoPb.Video        | 视频流缓存 |
 | 2           | video_id                      | []*commentPb.Comment | 评论缓存   |
 
-#### 3.2.5 架构思路
+### 3.2.5 架构思路
 
 针对本项目，基于所提供的技术栈和场景需求，采用如下架构来实现一个高效、稳定的抖音后端系统：
 
@@ -195,9 +195,9 @@
 > 4. **弹幕过滤和审核**：为了维护平台的内容质量和用户体验，可以引入弹幕过滤和审核机制，使用敏感词过滤、机器学习模型等技术对弹幕内容进行实时筛选和审核。
 > 5. **实时推送和同步**：使用WebSocket等实时推送技术，将新的评论和弹幕实时推送给观看同一视频的其他用户，提供实时的互动体验。
 
-### 3.3 项目代码介绍
+## 3.3 项目代码介绍
 
-#### 3.3.1 项目目录介绍
+### 3.3.1 项目目录介绍
 
 ```Shell
 ├─.github                       # 存放GitHub相关的配置文件和工作流
@@ -258,7 +258,7 @@
 └─util                          # 工具函数和类
 ```
 
-#### 3.3.2 典型代码介绍
+### 3.3.2 典型代码介绍
 
 - 网关路由部分
 
@@ -556,13 +556,13 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 
 # 四、测试结果
 
-### **4.1 功能测试**
+## **4.1 功能测试**
 
 使用Postman软件进行功能测试。同时项目中也包含单元测试，均放在test目录下。
 
-#### UserService
+### UserService
 
-##### /douyin/user/register/ - 用户注册接口
+#### /douyin/user/register/ - 用户注册接口
 
 | 用例描述   | 测试结果                                             |
 | ---------- | ---------------------------------------------------- |
@@ -571,7 +571,7 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 用户名过长 | ![img](.vuepress\public\images\1693747834229-19.png) |
 | 密码过长   | ![img](.vuepress\public\images\1693747834229-20.png) |
 
-##### /douyin/user/login/ - 用户登录接口
+#### /douyin/user/login/ - 用户登录接口
 
 | 用例描述     | 测试结果                                             |
 | ------------ | ---------------------------------------------------- |
@@ -587,9 +587,9 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | token错误  | ![img](.vuepress\public\images\1693747834229-25.png) |
 | 用户不存在 | ![img](.vuepress\public\images\1693747834229-26.png) |
 
-#### VideoService
+### VideoService
 
-##### /douyin/feed/ - 视频流接口
+#### /douyin/feed/ - 视频流接口
 
 | 用例描述           | 测试结果                                             |
 | ------------------ | ---------------------------------------------------- |
@@ -597,23 +597,23 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 未登录状态正确请求 | ![img](.vuepress\public\images\1693747834230-28.png) |
 | token错误          | ![img](.vuepress\public\images\1693747834230-29.png) |
 
-##### /douyin/publish/action/ - 视频投稿
+#### /douyin/publish/action/ - 视频投稿
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
 | 正确请求  | ![img](.vuepress\public\images\1693747834230-30.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834230-31.png) |
 
-##### /douyin/publish/list/ - 发布列表
+#### /douyin/publish/list/ - 发布列表
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
 | 正确请求  | ![img](.vuepress\public\images\1693747834230-32.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834230-33.png) |
 
-#### FavoriteService 
+### FavoriteService 
 
-##### **/douyin/favorite/list/ - 喜欢列表**
+#### **/douyin/favorite/list/ - 喜欢列表**
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
@@ -629,16 +629,16 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 取消点赞  | ![img](.vuepress\public\images\1693747834231-38.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834231-39.png) |
 
-#### CommentService
+### CommentService
 
-##### douyin/comment/list/ - 评论列表
+#### douyin/comment/list/ - 评论列表
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
 | 正确请求  | ![img](.vuepress\public\images\1693747834231-40.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834231-41.png) |
 
-##### douyin/comment/action/ - 评论操作
+#### douyin/comment/action/ - 评论操作
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
@@ -646,9 +646,9 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 删除评论  | ![img](.vuepress\public\images\1693747834231-43.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834231-44.png) |
 
-#### RelationService
+### RelationService
 
-##### /douyin/relation/action/ - 关注操作
+#### /douyin/relation/action/ - 关注操作
 
 | 用例描述  | 测试结果                                             |
 | --------- | ---------------------------------------------------- |
@@ -658,23 +658,23 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 重复关注  | ![img](.vuepress\public\images\1693747834231-48.png) |
 | token错误 | ![img](.vuepress\public\images\1693747834232-49.png) |
 
-##### /douyin/relation/follow/list -关注列表
+#### /douyin/relation/follow/list -关注列表
 
 | 用例描述         | 测试结果                                             |
 | ---------------- | ---------------------------------------------------- |
 | 拉取关注用户列表 | ![img](.vuepress\public\images\1693747834232-50.png) |
 | token错误        | ![img](.vuepress\public\images\1693747834232-51.png) |
 
-##### /douyin/relation/friend/list/ - 粉丝列表
+#### /douyin/relation/friend/list/ - 粉丝列表
 
 | 用例描述     | 测试结果                                             |
 | ------------ | ---------------------------------------------------- |
 | 拉取粉丝列表 | ![img](.vuepress\public\images\1693747834232-52.png) |
 | token错误    | ![img](.vuepress\public\images\1693747834232-53.png) |
 
-#### MessageService
+### MessageService
 
-##### /douyin/message/chat/ - 聊天接口
+#### /douyin/message/chat/ - 聊天接口
 
 | 用例描述           | 测试结果                                             |
 | ------------------ | ---------------------------------------------------- |
@@ -682,7 +682,7 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 | 查看自己与自己聊天 | ![img](.vuepress\public\images\1693747834232-55.png) |
 | token错误          | ![img](.vuepress\public\images\1693747834232-56.png) |
 
-##### /douyin/message/action/ - 发送消息
+#### /douyin/message/action/ - 发送消息
 
 | 用例描述     | 测试结果                                             |
 | ------------ | ---------------------------------------------------- |
@@ -691,7 +691,7 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 
 通过所有的功能测试，本次要求实现的所有接口功能均正常。
 
-### **4.2 性能测试**
+## **4.2 性能测试**
 
 使用Apache JMeter软件进行性能测试。本次测试选用了三个热门接口，用户登录，点赞视频，评论视频，分别得出相应的聚合报告和图形结果。
 

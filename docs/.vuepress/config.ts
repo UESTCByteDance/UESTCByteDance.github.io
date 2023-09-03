@@ -38,6 +38,6 @@ export default defineUserConfig({
                 ],
             },
         ],
-        repo: 'https://github.com/UESTCByteDance/ByteRhythm',
+        // repo: 'https://github.com/UESTCByteDance/UESTCByteDance.github.io/tree/main/docs',
     }),
 })

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/UESTCByteDance/UESTCByteDance.github.io#readme",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.67"
+  },
+  "dependencies": {
+    "vue-video-player": "^6.0.0"
   }
 }

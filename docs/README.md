@@ -1,6 +1,6 @@
 ## 一、项目介绍
 
-> **简要介绍**：本项目利用 Golang 以及相关技术如 Gorm、MySQL、Redis、JWT、RabbitMQ 、Hystrix、七牛云 等构建了基于 Gin 和 Go-micro的微服务应用，实现了视频处理、对象存储、限流、降级熔断、负载均衡等功能，并通过 Opentracing、Jaeger 等工具进行监控与追踪，Docker进行容器化部署，形成高可用高性能的分布式服务。
+> **简要介绍**：本项目利用 Golang 以及相关技术如 Gorm、MySQL、Redis、JWT、RabbitMQ 、Hystrix、七牛云 等构建了基于 Gin 和 Go-micro的微服务应用，实现了视频处理、对象存储、限流、降级熔断、负载均衡等功能，并通过 Opentracing、Jaeger 等工具进行监控与追踪，Testify进行单元测试，Docker进行容器化部署，形成高可用高性能的分布式服务。
 >
 > **项目服务地址**：<http://47.113.223.86:8080>
 >
@@ -720,10 +720,13 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 ## 五、Demo 演示视频 
 
 <!-- 暂时无法在成电飞书文档外展示此内容 -->
-<!-- mp4格式 -->
-<video id="video" controls="" preload="none" poster="封面">
-      <source id="mp4" src="vuepress\public\tiktok.mp4" type="video/mp4">
-</video>
+
+<!-- <iframeVideo ihtml="https://player.bilibili.com/player.html?aid=90992146&cid=155380603&page=1&danmaku=0&high_quality=1"></iframeVideo > -->
+<!-- <iframeVideo ihtml="https://player.bilibili.com/player.html?aid=90992146&cid=155380603&page=2&danmaku=0&high_quality=1"></iframeVideo > -->
+<!-- <video src="https://github.com/UESTCByteDance/UESTCByteDance.github.io/blob/main/tiktok.mp4" controls></video> -->
+<iframe src="//player.bilibili.com/player.html?aid=533014909&bvid=BV1Nu411P7ZE&cid=1256358545&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+
+
 
 ## 六、项目总结与反思
 

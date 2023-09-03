@@ -688,9 +688,10 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 
 ## 五、Demo 演示视频
 
-<video id="video" controls="" preload="none" poster="封面">
+<!-- <video id="video" controls="" preload="none" poster="封面">
       <source id="mp4" src="mp4格式视频" type="video/mp4">
-</videos>
+</videos> -->
+> 视频过大，暂未放入GitHub仓库中
 
 
 

@@ -123,6 +123,10 @@
 | content      | string(1024) | 无         | 无          | 消息内容     |
 | created_at   | time.Time    | 无         | 无          | 创建时间戳   |
 
+各表图形化展示：
+
+![ER图](.vuepress\public\images\er图.png)
+
 #### 3.2.4 Redis缓存设计
 
 | Redis数据库 | 键                            | 值                   | 描述       |

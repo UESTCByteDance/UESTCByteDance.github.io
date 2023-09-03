@@ -686,9 +686,11 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 
 ![img](https://uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=MDIxMjY4NDEzZWRkMGRkZmVhMDIxYTc4YjNjZjZiNDlfcGhPcG4zbzlFVWhKckhYcm5YdlZkMEtTSUlkS3dtZGpfVG9rZW46VFBDZWJ4ZWxQb1JwZjV4MzVJOGNwUUl5bkliXzE2OTM3NDI0Njc6MTY5Mzc0NjA2N19WNA)
 
-## 五、Demo 演示视频(未完成)
+## 五、Demo 演示视频
 
-
+<video id="video" controls="" preload="none" poster="封面">
+      <source id="mp4" src="mp4格式视频" type="video/mp4">
+</videos>
 
 
 
@@ -713,7 +715,7 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 * **容错与故障恢复机制**：进一步加强系统的容错能力，引入更多的熔断、降级和故障恢复机制，以提高系统的稳定性和可用性。
 * **扩展和水平扩容**：考虑引入更多的负载均衡策略和扩展机制，实现系统的水平扩容能力，以适应业务的快速增长和流量的变化。
 > 通过总结和改进，我们可以进一步提升该项目的质量和性能，为用户提供更好的服务体验，并不断适应和应对市场的变化和挑战。
-## 七、其他补充资料(未完成)
+## 七、其他补充资料
 
 我们的项目从最开始的技术选型到框架转变和版本迭代经历了以下过程。
 

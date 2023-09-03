@@ -32,7 +32,7 @@ export default defineUserConfig({
                     //     activeMatch: '/pages/learnJTs/detail_usage.md',
                     // },
                     {
-                        text: '待完善...',
+                        text: '电子科技大学8名学生',
                         link: '/pages/other/other.md',
                     },
                 ],

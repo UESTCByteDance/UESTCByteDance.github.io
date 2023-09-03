@@ -2,9 +2,9 @@
 
 > *简要介绍：本项目利用 Golang 以及相关技术如 Gorm、MySQL、Redis、JWT、RabbitMQ* *、Hystrix、七牛云**等构建了基于 Gin 和* *Go-micro的微服务应用，实现了视频处理、对象存储、限流、降级熔断、负载均衡等功能，并通过 Opentracing、Jaeger 等工具进行监控与追踪，Docker进行容器化部署，形成高可用高性能的分布式服务。*
 >
-> *项目服务地址**：**http**://47.113.223.86:8080*
+> **项目服务地址**：http://47.113.223.86:8080
 >
-> *项目仓库地址：**https://github.com/UESTCByteDance/ByteRhythm*
+> **项目仓库地址**：[https://github.com/UESTCByteDance/ByteRhythm](https://github.com/UESTCByteDance/ByteRhythm)
 
 ## 二、项目分工
 

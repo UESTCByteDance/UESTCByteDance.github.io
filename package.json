@@ -23,5 +23,8 @@
   },
   "dependencies": {
     "vue-video-player": "^6.0.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

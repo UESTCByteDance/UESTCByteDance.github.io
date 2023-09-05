@@ -1,3 +1,6 @@
+---
+sidebarDepth: 5
+---
 ## 一、项目介绍
 
 > **简要介绍**：本项目利用 Golang 以及相关技术如 Gorm、MySQL、Redis、JWT、RabbitMQ 、Hystrix、七牛云 等构建了基于 Gin 和 Go-micro的微服务应用，实现了视频处理、对象存储、限流、降级熔断、负载均衡等功能，并通过 Opentracing、Jaeger 等工具进行监控与追踪，Testify进行单元测试，Docker进行容器化部署，形成高可用高性能的分布式服务。
@@ -718,7 +721,7 @@ func (s *SyncVideo) SyncVideoCreate(ctx context.Context, queueName string) error
 通过对热门接口的性能测试，可以确定本款抖音app可同时容纳5000用户以上同时刷短视频。从上面的测试结果可以看出，点赞视频接口性能表现的比较好，这是由于使用了消息队列对用户的点赞进行了异步处理，以达到流量削峰的目的。由于我们考虑到实际场景下点赞的并发是要远远大于评论的，也就是说10万点赞的视频可能评论只有几千条，所以没有给视频评论接口使用消息队列。也可以看到在高并发场景下响应时间差强人意，这也是我们需要优化的地方。
 
 ## 五、Demo 演示视频 
-
+<https://github.com/UESTCByteDance/UESTCByteDance.github.io/blob/main/tiktok.mp4>
 <!-- 暂时无法在成电飞书文档外展示此内容 -->
 
 <!-- <iframeVideo ihtml="https://player.bilibili.com/player.html?aid=90992146&cid=155380603&page=1&danmaku=0&high_quality=1"></iframeVideo > -->
